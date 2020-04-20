@@ -2,7 +2,7 @@
 <html lang="en-US" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>TITLE GOES HERE.....</title>
+  <title>My web synth</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -26,12 +26,15 @@
 
 <script>
 
-// Create a synth and connect it to the pitch shifter
+// Create a synth and connect it to the master output
 var synth = new Tone.MonoSynth().toMaster();
 // set oscillator to produce sawtooth wave (default is square)
 synth.oscillator.type = "sawtooth";
 // set filter envelope octaves to 0, which eliminates effect
-synth.filterEnvelope.octaves = 0;
+synth.filterEnvelope.octaves = 5;
+synth.filterEnvelope.attack = 2;
+synth.filterEnvelope.decay = 2;
+synth.filterEnvelope.sustain = 0.2;
 // set initial filter frequency to same value as default slider position
 synth.filterEnvelope.baseFrequency = 3200;
 // default volume is 0 dBfs (full-scale) and sounds very loud
